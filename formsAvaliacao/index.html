@@ -5,97 +5,102 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     </head>
     <body>
-        <div class="container">
-            <h1>Vagas de emprego</h1>
-            <p>Preencha os campos abaixo.</p>
-            <h3>Dados sobre você</h3>
-            <form class="row g-3 needs-validation" method="POST" action="valida.php">
-                <div class="row g-2">
-                    <div class="col-md-4">
-                        <label for="nome" class="form-label">Nome:</label>
-                        <input type="text" class="form-control" id="nome" name="nome">
+        <div class="container mt-3 mb-3 bg-dark rounded-3 text-white">
+            <div class="container pt-3 pb-3">
+                <h1>Vaga de emprego</h1>
+                <p>Preencha os campos abaixo.</p>
+                <h3>Dados sobre você</h3>
+                <form class="row g-3 needs-validation" method="POST" action="valida.php">
+                    <div class="row g-2">
+                        <div class="col-md-4">
+                            <label for="nome" class="form-label">Nome:<abbr title="Campo obrigatório">*</abbr></label>
+                            <input type="text" class="form-control" id="nome" name="nome">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="sobrenome" class="form-label">Sobrenome:<abbr title="Campo obrigatório">*</abbr></label>
+                            <input type="text" class="form-control" id="sobrenome" name="sobrenome">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="cpf" class="form-label">CPF:<abbr title="Campo obrigatório">*</abbr></label>
+                            <input type="text" class="form-control" id="cpf" placeholder="XXX.XXX.XXX-XX" name="cpf">
+                        </div>
                     </div>
-                    <div class="col-md-4">
-                        <label for="sobrenome" class="form-label">Sobrenome:</label>
-                        <input type="text" class="form-control" id="sobrenome" name="sobrenome">
+                    <div class="row g-2">
+                        <div class="col-md-5">
+                            <label for="email" class="form-label">Email:<abbr title="Campo obrigatório">*</abbr></label>
+                            <input type="email" placeholder="exemplo@gmail.com" class="form-control" id="email" name="email">  
+                        </div>
+                        <div class="col-sm-3">
+                            <label class="form-label">Sexo:<abbr title="Campo obrigatório">*</abbr></label>
+                            <select class="form-select" name="sexo">
+                                <option></option>
+                                <option value="Masculino">Masculino</option>
+                                <option value="Feminino">Feminino</option>
+                                <option value="Feminino">Pokemón</option>
+                                <option value="Feminino">Não identificado</option>
+                                <option value="Feminino">Prefiro não dizer</option>
+                            </select>
+                        </div>
                     </div>
-                    <div class="col-md-3">
-                        <label for="cpf" class="form-label"><abbr>CPF:</abbr></label>
-                        <input type="text" class="form-control" id="cpf" placeholder="XXX.XXX.XXX-XX" name="cpf">
+                    <div class="row g-2">
+                        <div class="col-md-4">
+                            <label class="form-label">Cidade:<abbr title="Campo obrigatório">*</abbr></label>
+                            <input type="text" class="form-control" id="cidade" name="cidade">
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label">Estado:<abbr title="Campo obrigatório">*</abbr></label>
+                            <select class="form-select" name="estado">
+                                <option></option>
+                                <option value="SC">Santa Catarina</option>
+                                <option value="PR">Paraná</option>
+                                <option value="RS">Rio Grande do Sul</option>
+                            </select>
+                        </div>
+                        <div class="col-md-5">
+                            <label class="form-label">Endereço:<abbr title="Campo obrigatório">*</abbr></label>
+                            <input type="text" placeholder="Ex: Rua do meu Bairro n° XXX-X" class="form-control" id="endereco" name="endereco">
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label">CEP:<abbr title="Campo obrigatório">*</abbr></label>
+                            <input type="text" class="form-control" id="cep" name="cep">
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label">Telefone de Contato:<abbr title="Campo obrigatório">*</abbr></label>
+                            <input type="text" class="form-control" id="telefone" name="telefone">
+                        </div>
                     </div>
-                </div>
-                <div class="row g-2">
-                    <div class="col-md-5">
-                        <label for="email" class="form-label">Email:</label>
-                        <input type="email" placeholder="exemplo@gmail.com" class="form-control" id="email" name="email">  
+                    <div class="row g-2">
+                        <h2>Escolaridade</h2>
+                        <div class="col-md-3">
+                            <label class="form-label">Grau de escolaridade:</label>
+                            <select class="form-select" name="escolaridade">
+                                <option></option>
+                                <option value="Ensino Fundamental Completo">Ensino Fundamental Completo</option>
+                                <option value="Ensino Médio Incompleto">Ensino Médio Incompleto</option>
+                                <option value="Ensino Médio Completo">Ensino Médio Completo</option>
+                                <option value="Ensino Superior Completo">Ensino Superior Completo</option>
+                                <option value="Pós-Graduação">Pós-Graduação</option>
+                                <option value="Doutorado">Doutorado</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-">
+                            <label class="form-label">Outros cursos (Opcional):</label>
+                            <textarea class="form-control" rows="3" id="cursos" name="cursos"></textarea>
+                        </div>
                     </div>
-                    <div class="col-sm-3">
-                        <label class="form-label">Sexo:</label>
-                        <select class="form-select" name="sexo">
-                            <option value="Masculino">Masculino</option>
-                            <option value="Feminino">Feminino</option>
-                            <option value="Feminino">Pokemón</option>
-                            <option value="Feminino">Não identificado</option>
-                            <option value="Feminino">Prefiro não dizer</option>
-                          </select>
+                    <div class="row g-2">
+                        <h2>Experiência de trabalho</h2>
+                        <textarea class="form-control" rows="5" id="experiencia" name="experiencia"></textarea>
                     </div>
-                </div>
-                <div class="row g-2">
-                    <div class="col-md-4">
-                        <label class="form-label">Cidade:</label>
-                        <input type="text" class="form-control" id="cidade" name="cidade">
+                    <div class="row g-2">
+                        <h2>Conhecimentos</h2>
+                        <textarea class="form-control" rows="5" id="conhecimentos" name="conhecimentos"></textarea>
                     </div>
-                    <div class="col-md-3">
-                        <label class="form-label">Estado:</label>
-                        <select class="form-select" name="estado">
-                            <option value="SC">Santa Catarina</option>
-                            <option value="PR">Paraná</option>
-                            <option value="RS">Rio Grande do Sul</option>
-                        </select>
+                    <div class="row g-2">
+                        <button type="submit" class="col-sm-1 btn btn-danger">Enviar</button>
                     </div>
-                    <div class="col-md-5">
-                        <label class="form-label">Endereço:</label>
-                        <input type="text" placeholder="Ex: Rua do meu Bairro n° XXX-X" class="form-control" id="endereco" name="endereco">
-                    </div>
-                    <div class="col-md-3">
-                        <label class="form-label">CEP:</label>
-                        <input type="text" class="form-control" id="cep" name="cep">
-                    </div>
-                    <div class="col-md-3">
-                        <label class="form-label">Telefone de Contato:</label>
-                        <input type="text" class="form-control" id="telefone" name="telefone">
-                    </div>
-                </div>
-                <div class="row g-2">
-                    <h2>Escolaridade</h2>
-                    <div class="col-md-3">
-                        <label class="form-label">Grau de escolaridade:</label>
-                        <select class="form-select" name="escolaridade">
-                            <option value="EnsFundComp">Ensino Fundamental Completo</option>
-                            <option value="EnsMedIncomp">Ensino Médio Incompleto</option>
-                            <option value="EnsMedComp">Ensino Médio Completo</option>
-                            <option value="EnsSupComp">Ensino Superior Completo</option>
-                            <option value="PosGrad">Pós-Graduação</option>
-                            <option value="Doutorado">Doutorado</option>
-                        </select>
-                    </div>
-                    <div class="col-lg-">
-                        <label class="form-label">Outros cursos (Opcional):</label>
-                        <textarea class="form-control" rows="3" id="cursos" name="cursos"></textarea>
-                    </div>
-                </div>
-                <div class="row g-2">
-                    <h2>Experiência de trabalho</h2>
-                    <textarea class="form-control" rows="5" id="experiencia" name="experiencia"></textarea>
-                </div>
-                <div class="row g-2">
-                    <h2>Conhecimentos</h2>
-                    <textarea class="form-control" rows="5" id="conhecimentos" name="conhecimentos"></textarea>
-                </div>
-                <div class="row g-2">
-                    <button type="submit" class="col-sm-1 btn btn-primary">Enviar</button>
-                </div>
-              </form>
+                </form>
+            </div>
         </div>
     </body>
 </html>
